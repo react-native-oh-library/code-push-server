@@ -8,7 +8,7 @@ import { generator } from 'rand-token';
 import recursive from 'recursive-readdir';
 import slash from 'slash';
 import { AppError } from '../app-error';
-import { ANDROID, IOS } from '../const';
+import { ANDROID, HARMONY, IOS } from '../const';
 
 export function md5(str: string) {
     const md5sum = crypto.createHash('md5');
@@ -141,6 +141,7 @@ export function uploadPackageType(directoryPath: string) {
             } else {
                 const aregex = /android\.bundle/;
                 const aregexIOS = /main\.jsbundle/;
+                const aregexHarmony = /harmony\.jsbundle/;
                 let packageType = 0;
                 _.forIn(files, (value: string) => {
                     if (aregex.test(value)) {
@@ -149,6 +150,10 @@ export function uploadPackageType(directoryPath: string) {
                     }
                     if (aregexIOS.test(value)) {
                         packageType = IOS;
+                        return false;
+                    }
+                    if (aregexHarmony.test(value)) {
+                        packageType = HARMONY;
                         return false;
                     }
 

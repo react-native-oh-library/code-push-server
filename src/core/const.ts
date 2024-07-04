@@ -6,6 +6,8 @@ export const ANDROID = 2;
 export const ANDROID_NAME = 'Android';
 export const WINDOWS = 3;
 export const WINDOWS_NAME = 'Windows';
+export const HARMONY = 4;
+export const HARMONY_NAME = 'Harmony';
 
 // supported apps
 export const REACT_NATIVE = 1;
