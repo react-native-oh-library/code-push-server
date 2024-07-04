@@ -124,7 +124,7 @@ class AppManager {
                                 os = ANDROID_NAME;
                             } else if (info.os === WINDOWS) {
                                 os = WINDOWS_NAME;
-                            }else if (info.os === HARMONY) {
+                            } else if (info.os === HARMONY) {
                                 os = HARMONY_NAME;
                             }
 
