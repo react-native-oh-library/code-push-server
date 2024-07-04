@@ -1,3 +1,4 @@
+
 import _ from 'lodash';
 import { Op } from 'sequelize';
 import { Apps, AppsInterface } from '../../models/apps';
@@ -12,6 +13,8 @@ import {
     ANDROID_NAME,
     WINDOWS,
     WINDOWS_NAME,
+    HARMONY,
+    HARMONY_NAME,
     CORDOVA,
     CORDOVA_NAME,
     REACT_NATIVE,
@@ -121,6 +124,8 @@ class AppManager {
                                 os = ANDROID_NAME;
                             } else if (info.os === WINDOWS) {
                                 os = WINDOWS_NAME;
+                            } else if (info.os === HARMONY) {
+                                os = HARMONY_NAME;
                             }
 
                             let platform = '';

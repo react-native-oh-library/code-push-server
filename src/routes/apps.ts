@@ -11,6 +11,8 @@ import {
     ANDROID_NAME,
     WINDOWS,
     WINDOWS_NAME,
+    HARMONY,
+    HARMONY_NAME,
     REACT_NATIVE,
     REACT_NATIVE_NAME,
     CORDOVA,
@@ -1209,8 +1211,10 @@ appsRouter.post(
             os = ANDROID;
         } else if (osName === _.toLower(WINDOWS_NAME)) {
             os = WINDOWS;
+        } else if (osName === _.toLower(HARMONY_NAME)) {
+            os = HARMONY;
         } else {
-            res.status(406).send('Please input os [iOS|Android|Windows]!');
+            res.status(406).send('Please input os [iOS|Android|Windows|Harmony]!');
             return;
         }
         const platformName = _.toLower(body.platform);
